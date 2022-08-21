@@ -188,3 +188,79 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+form#loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+}
+#log{
+  display: flex;
+  font-weight: 900;
+  justify-content: center;
+}
+#User{
+  size: 20px;
+  color:#1b1b1b;
+  margin: 0 auto;
+}
+#password{
+  color: #1b1b1b;
+  margin: 0 auto;
+}
+#Send{
+  background-color: rgb(34, 91, 248);
+  color: #fff;
+  width: min-content;
+  margin: 0 auto;
+  
+}
+#logimg{
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  margin: 0 auto;
+
+}
+
+
+#prodCar{
+ display: block;
+ padding: 25px;
+}
+
+#CarImg{
+  display: block;
+  float: left;
+  padding: .25rem;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: .25rem;
+  max-width: 100%;
+  height: 100px;
+}
+#CarName{
+  display: inline-block;
+  position: relative;
+  padding: 1%;
+  font-weight: 200;
+}
+#CarDesc{
+  display: block;
+  position: relative;
+  font-size: small;
+}
+#CarCost{
+  display: block;
+  position: relative;
+  font-size: small;
+  font-weight: bold;
+}
+#CarSC{
+  display: block;
+  position: relative;
+  float: right;
+  
+
+}
