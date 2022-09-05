@@ -12,3 +12,6 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 });
+//proceso para insertar el dato guardado en el local storage del usuario en la barra de navegacion.
+let userData = document.getElementById("userData");
+userData.innerHTML+= localStorage.getItem("user");
