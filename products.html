@@ -36,6 +36,46 @@
       </div>
     </div>
   </nav>
+  <div class="container" id="search">
+    <form>
+      <input type="search" id="searchbar" placeholder="Ingrese lo que desea buscar:">
+      <input type="submit" id="searchbutton" value="Buscar">
+    </form>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col text-end">
+        <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
+          <input type="radio" class="btn-check" name="options" id="sortA">
+          <label class="btn btn-light" for="sortA">Precio Asce</label>
+          <input type="radio" class="btn-check" name="options" id="sortD">
+          <label class="btn btn-light" for="sortD">Precio Desc</label>
+          <input type="radio" class="btn-check" name="options" id="sortRel">
+          <label class="btn btn-light" for="sortRel">Reelevancia</label>
+        </div>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
+      <div class="row container p-0 m-0">
+        <div class="col">
+          <p class="font-weight-normal text-end my-2">Precio.</p>
+        </div>
+        <div class="col">
+          <input class="form-control" type="number" placeholder="min." id="rFilterCountMin">
+        </div>
+        <div class="col">
+          <input class="form-control" type="number" placeholder="máx." id="rFilterCountMax">
+        </div>
+        <div class="col-3 p-0">
+          <div class="btn-group" role="group">
+            <button class="btn btn-light btn-block" id="rFilterCount">Filtrar</button>
+            <button class="btn btn-link btn-sm" id="clearRange">Limpiar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <main class="pb-5 container">
     <div class="container">
       <div class=products id="prodCar">

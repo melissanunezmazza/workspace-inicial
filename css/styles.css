@@ -264,3 +264,14 @@ form#loginForm {
   
 
 }
+#userData{
+  display: flex;
+  float: left;
+  position: relative;
+  color: #fff;
+}
+#search{
+  display: flex;
+  position: relative;
+  float: left;
+}
