@@ -3,26 +3,44 @@ const ident = localStorage.getItem("catID")
 //variable a usar en el fetch con la url y la variable anterior concatenada.
 const CARS101URL = "https://japceibal.github.io/emercado-api/cats_products/"+ident+".json";
 
+//funcion que guarda la id de cada producto en local storage, y redirecciona a product-info.html
+function setID(id) {
+    localStorage.setItem("ID", id);
+    window.location = "product-info.html"}
+
 //fetch para filter
 fetch(CARS101URL)
 .then(response => response.json())
 .then (datos => {
+    console.log(datos.products)
+    
     function filtrar() { //la funcion devuelve los datos completos si no se aplican filtros, y si se aplican devuelve el array ya filtrado.
     let pfilter = datos.products.filter(products => (products.cost >= document.getElementById("rFilterCountMin").value )&& ( products.cost <= document.getElementById("rFilterCountMax").value));
     console.log(pfilter);
     let divcars = document.getElementById(`prodCar`);
     divcars.innerHTML = "";
     for (let dato of pfilter) {
+        let cid = 0;
         console.log(datos); 
     divcars.innerHTML += `
-    <h4 id="CarName">${dato.name}</h4>
-    <img id="CarImg" src=${dato.image}></img>
-    <small id="CarSC">${dato.soldCount} Vendidos</small>
-    <p id="CarDesc">${dato.description}</p>
-    <p id="CarCost">${dato.cost}${dato.currency}</p>
+    <div class="row">
+            <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">}
+                <div id="ProductLst" onclick="setID(${dato.id})"class="list-group-item list-group-item-action  cursor-active"
+                    <h4 id="Name">${dato.name}</h4>
+                    <img id="Img" src=${dato.image}></img>
+                    <small id="SC">${dato.soldCount} Vendidos</small>
+                    <p id="Desc">${dato.description}</p>
+                    <p id="Cost">${dato.cost}${dato.currency}</p>
+                </div>
+            </div>
+        </div>
+    </div>
      `
+    
     }
+
 };
+
 function clearfilter(){ //funcion para limpiar los filtros
     document.getElementById("rFilterCountMin").value = 0;//valores por defecto tras limpiar los filtros
     document.getElementById("rFilterCountMax").value = 200000000;
@@ -47,14 +65,27 @@ fetch(CARS101URL)
     for (let dato of listPr) {
         console.log(listPr); 
         divListP.innerHTML += `
-    <h4 id="CarName">${dato.name}</h4>
-    <img id="CarImg" src=${dato.image}></img>
-    <small id="CarSC">${dato.soldCount} Vendidos</small>
-    <p id="CarDesc">${dato.description}</p>
-    <p id="CarCost">${dato.cost}${dato.currency}</p>
+        <div id="ProductLst"
+        <div class="row">
+            <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
+                <div id="ProductLst" onclick="setID(${dato.id})"class="list-group-item list-group-item-action  cursor-active" 
+                    <h4 id="Name">${dato.name}</h4>
+                    <img id="Img" src=${dato.image}></img>
+                    <small id="SC">${dato.soldCount} Vendidos</small>
+                    <p id="Desc">${dato.description}</p>
+                    <p id="Cost">${dato.cost}${dato.currency}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
      `
+
+
     }
- }//a partir de aqui, el sort que define el orden dependiendo de los botones asignados para ello, al final llamando a la funcion insert para devolver el arry ordenado.
+ }
+ 
+ //a partir de aqui, el sort que define el orden dependiendo de los botones asignados para ello, al final llamando a la funcion insert para devolver el arry ordenado.
     let orA = document.getElementById("sortA");
     let orD = document.getElementById("sortD");
     let RelDesc = document.getElementById("sortRel");
@@ -85,8 +116,11 @@ fetch(CARS101URL)
         });
         insert();
     });
-    
+ 
 })
+
+
+
 
 //fetch para  la search bar (desafiate 2) (aún en desarrollo)
 /*fetch(CARS101URL)
