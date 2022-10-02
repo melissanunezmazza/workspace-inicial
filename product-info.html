@@ -10,6 +10,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome.min.css">
 </head>
 
 <body>
@@ -37,10 +38,30 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div class="container" class="img-thumbnail" class="bd-placeholder-img card-img-top" id="prodInfo">
+    </div>
+    <div>
+      <h2 id="Comments">Comentarios:</h2>
+      <div class="container"  id="ComCont">
       </div>
+      <div id="addComment" class="container" class="row" >
+        <form id="comentario">
+       <h2>Comentar</h2>
+       <p >Tu opinion</p>
+       <input type="textbox" id="comment">
+       <p>Tu puntuacion</p>
+       <select id="star">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <input type="button" value="Enviar" id="send" class="btn btn-light btn-block" class="btn-group">
+      </form>
+      </div>
+    </div>
+    <div id="prodRel">
     </div>
   </main>
   <footer class="text-muted">

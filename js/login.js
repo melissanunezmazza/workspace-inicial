@@ -10,7 +10,7 @@ formLog.addEventListener('submit', function(e){
 
     if (user.length && password.length >= 8) {
         e.preventDefault();
-        localStorage.setItem("user", user); //guardado de dato de ususario ingerrsado, en el local storage
+        localStorage.setItem("user", user); //guardado de dato de ususario ingresado, en el local storage
         window.location.href = 'index.html';
     } else if (!(user.length>=8)) {
         e.preventDefault();

@@ -15,7 +15,7 @@ fetch(CARS101URL)
     console.log(datos.products)
     
     function filtrar() { //la funcion devuelve los datos completos si no se aplican filtros, y si se aplican devuelve el array ya filtrado.
-    let pfilter = datos.products.filter(products => (products.cost >= document.getElementById("rFilterCountMin").value )&& ( products.cost <= document.getElementById("rFilterCountMax").value));
+    let pfilter = datos.products.filter(products => (products.cost >= document.getElementById("rFilterCountMin").value )&&( products.cost <= document.getElementById("rFilterCountMax").value)||(products.cost >= document.getElementById("rFilterCountMin").value )||( products.cost <= document.getElementById("rFilterCountMax").value));
     console.log(pfilter);
     let divcars = document.getElementById(`prodCar`);
     divcars.innerHTML = "";
@@ -24,7 +24,7 @@ fetch(CARS101URL)
         console.log(datos); 
     divcars.innerHTML += `
     <div class="row">
-            <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">}
+            <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
                 <div id="ProductLst" onclick="setID(${dato.id})"class="list-group-item list-group-item-action  cursor-active"
                     <h4 id="Name">${dato.name}</h4>
                     <img id="Img" src=${dato.image}></img>
