@@ -23,13 +23,13 @@ DesMenu.innerHTML += `
   </a>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
     <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-    <li><a class="dropdown-item" href="mi-profile.html">Mi perfil</a></li>
-    <li><a class="dropdown-item" href="login.html" id="logout">Cerrar Sesion</a></li>
+    <li><a class="dropdown-item" href="my-profile.html" id="profile" >Mi perfil</a></li>
+    <li><a class="dropdown-item" href="index.html" id="logout">Cerrar Sesion</a></li>
   </ul>
 </div>`
 userData.appendChild(DesMenu)
 //addEventListener que elimina el dato de usuario del localStorage cuando se clickea en la opcion Cerrar Sesion del menú desplegable.
 let eraseUser = document.getElementById("logout")
 eraseUser.addEventListener("click", function(){
-    localStorage.removeItem("user")
+    localStorage.clear();
 })
