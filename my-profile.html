@@ -36,7 +36,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link" href="inicio.html">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="categories.html">Categorías</a>
@@ -52,9 +52,69 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+      <div class="row">
+        <br>
+        <div>
+          <h1>Perfil</h1>
+          <img src="img/img_perfil.png" class="img-thumbnail bd-placeholder-img" width="100px" alt="...">
+        </div>
+        <br>
+        <hr>
+        <br>
+      <form class="row g-3 needs-validation" id="formprofile" novalidate>
+        <div class="col-md-4">
+          <label for="nameuser" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nameuser" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Ingrese su nombre.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="secondnameuser" class="form-label">Segundo nombre</label>
+          <input type="text" class="form-control" id="secondnameuser" value="">
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="surnameuser" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="surnameuser" value="" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Ingrese su apellido.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="ssecondsurnameser" class="form-label">Segundo apellido</label>
+          <input type="text" class="form-control" id="ssecondsurnameser" value="">
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustommail" class="form-label">Email</label>
+          <div class="input-group has-validation">
+            <input type="email" class="form-control" id="validationCustommail" aria-describedby="inputGroupPrepend" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="teluser" class="form-label">Telefono de contacto</label>
+          <input type="number" class="form-control" id="teluser" value="">
+        </div>
+        <div class="input-group mb-3">
+          <input type="file" class="form-control" id="inputGroupFile02" value="" id="imgprof">
+          <label class="input-group-text" for="inputGroupFile02">Subir</label>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit" id="submit">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
     </div>
   </main>
   <footer class="text-muted">
